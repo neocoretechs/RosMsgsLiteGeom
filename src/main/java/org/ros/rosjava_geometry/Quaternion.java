@@ -29,10 +29,10 @@ import java.util.List;
  */
 public class Quaternion implements Serializable {
   private static final long serialVersionUID = 2101780199953010322L;
-  private final double x;
-  private final double y;
-  private final double z;
-  private final double w;
+  private double x;
+  private double y;
+  private double z;
+  private double w;
 
   public static Quaternion fromAxisAngle(Vector3 axis, double angle) {
     Vector3 normalized = axis.normalize();
@@ -64,6 +64,8 @@ public class Quaternion implements Serializable {
     return new Quaternion(0, 0, 0, 1);
   }
 
+  public Quaternion() {}
+  
   public Quaternion(double x, double y, double z, double w) {
     this.x = x;
     this.y = y;

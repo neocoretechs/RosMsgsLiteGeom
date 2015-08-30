@@ -67,6 +67,8 @@ public class Transform implements Serializable {
     return new Transform(vector, Quaternion.identity());
   }
 
+  public Transform() {}
+  
   public Transform(Vector3 translation, Quaternion rotation) {
     this.translation = translation;
     this.rotationAndScale = rotation;

@@ -34,9 +34,9 @@ public class Vector3 implements Serializable {
   private static final Vector3 Y_AXIS = new Vector3(0, 1, 0);
   private static final Vector3 Z_AXIS = new Vector3(0, 0, 1);
 
-  private final double x;
-  private final double y;
-  private final double z;
+  private double x;
+  private double y;
+  private double z;
 
   public static Vector3 fromVector3Message(geometry_msgs.Vector3 message) {
     return new Vector3(message.getX(), message.getY(), message.getZ());
@@ -62,6 +62,8 @@ public class Vector3 implements Serializable {
     return Z_AXIS;
   }
 
+  public Vector3() {}
+  
   public Vector3(double x, double y, double z) {
     this.x = x;
     this.y = y;

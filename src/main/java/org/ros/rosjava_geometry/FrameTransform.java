@@ -30,10 +30,10 @@ import org.ros.namespace.GraphName;
  */
 public class FrameTransform implements Serializable {
   private static final long serialVersionUID = -6838022018984519805L;
-  private final Transform transform;
-  private final GraphName source;
-  private final GraphName target;
-  private final Time time;
+  private Transform transform;
+  private GraphName source;
+  private GraphName target;
+  private Time time;
 
   public static FrameTransform fromTransformStampedMessage(
       geometry_msgs.TransformStamped transformStamped) {
@@ -44,6 +44,7 @@ public class FrameTransform implements Serializable {
     return new FrameTransform(transform, GraphName.of(source), GraphName.of(target), stamp);
   }
 
+  public FrameTransform() {}
   /**
    * Allocates a new {@link FrameTransform}.
    * 

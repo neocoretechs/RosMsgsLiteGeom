@@ -16,6 +16,8 @@
 
 package org.ros.rosjava_geometry;
 
+import java.io.Serializable;
+
 
 /**
  * Lazily converts a {@link geometry_msgs.Transform} message to a
@@ -25,15 +27,18 @@ package org.ros.rosjava_geometry;
  * 
  * @author damonkohler@google.com (Damon Kohler)
  */
-public class LazyFrameTransform {
+public class LazyFrameTransform implements Serializable {
+  private static final long serialVersionUID = -3050977066868932378L;
 
-  private final geometry_msgs.TransformStamped message;
+  private geometry_msgs.TransformStamped message;
 
   // Avoiding constructor code duplication.
   private final Object mutex = new Object();
 
   private FrameTransform frameTransform;
 
+  public LazyFrameTransform() {}
+  
   public LazyFrameTransform(geometry_msgs.TransformStamped message) {
     this.message = message;
   }
